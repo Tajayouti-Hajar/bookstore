@@ -10,8 +10,17 @@
         {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+        
 
-        <button type="submit" class="btn">Register</button>
+        <button class="btn btn-lg btn-primary" type="submit">Register</button>
+        <script>
+            var inputs = document.getElementsByTagName("input");
+            for (i=0; i < inputs.length; i++) {
+                inputs[i].className="form-control";
+                
+            }
+        </script>
     {{ form_end(registrationForm) }}
 {% endblock %}
+
+

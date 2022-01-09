@@ -5,7 +5,7 @@
 
 {% block body %}
 	{% if livres|length > 0  %}
-		<h1>Livres</h1>
+		<h1 class="turquoise" style="text-align: center;">Livres </h1>
 
 		<table id="livres" class="table">
 			<thead>
@@ -27,9 +27,9 @@
 						<td>{{ livre.dateDeParution ? livre.dateDeParution|date('Y-m-d') : '' }}</td>
 						<td>{{ livre.note }}</td>
 						<td>
-							<a class="btn btn-primary" href="{{ path('livre_show', {'id': livre.id}) }}">Afficher</a>
+							<a class="btn btn-primary" href="{{ path('livre_show', {'id': livre.id}) }}"><i class="fas fa-eye"></i></a>
 							{% if is_granted('ROLE_ADMIN') %}
-								<a class="btn btn-primary" href="{{ path('livre_edit', {'id': livre.id}) }}">Modifier</a>
+								<a class="btn btn-primary" href="{{ path('livre_edit', {'id': livre.id}) }}"><i class="fas fa-edit"></i></a>
 								{{ include('livre/_delete_form.html.twig') }}
 							{% endif %}
 						</td>
