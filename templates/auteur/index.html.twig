@@ -23,9 +23,9 @@
 					<td>{{ auteur.dateDeNaissance ? auteur.dateDeNaissance|date('Y-m-d') : '' }}</td>
 					<td>{{ auteur.nationalite }}</td>
 					<td>
-						<a class="btn btn-primary" href="{{ path('auteur_show', {'id': auteur.id}) }}">Afficher</a>
+						<a class="btn btn-primary" href="{{ path('auteur_show', {'id': auteur.id}) }}"><i class="fas fa-eye"></i></a>
 						{% if is_granted('ROLE_ADMIN') %}
-							<a class="btn btn-primary" href="{{ path('auteur_edit', {'id': auteur.id}) }}">Modifier</a>
+							<a class="btn btn-primary" href="{{ path('auteur_edit', {'id': auteur.id}) }}"><i class="fas fa-edit"></i></a>
 							{{ include('auteur/_delete_form.html.twig') }}
 						{% endif %}
 					</td>
